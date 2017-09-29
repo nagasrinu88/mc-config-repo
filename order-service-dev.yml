@@ -1,8 +1,6 @@
 ## YAML Template.
 ---
 spring:
-    application:
-        name: order-service
     h2.console:
         enabled: true
         path: /h2
@@ -14,13 +12,7 @@ spring:
         driver-class-name: org.h2.Driver
     sleuth:
         sampler.percentage: 0.2
-        web.skipPattern: (^cleanup.*)
-    cloud:
-        config.uri=http://localhost:8888
-        
-server:
-    port: 3333
-    
+        web.skipPattern: (^cleanup.*)    
 eureka:
   instance:
       instanceId: ${spring.application.name}:${random.value}
@@ -30,6 +22,3 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-naga:
-    props:
-        name: Naga
