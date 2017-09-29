@@ -13,6 +13,10 @@ zuul:
         customers:            
             service-id: customer-service
             path: /customers/**      
+            stripPrefix: true
+	products:            
+            service-id: product-service
+            path: /products/**      
             stripPrefix: true            
 eureka:
     instance:
